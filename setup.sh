@@ -7,5 +7,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cat dotfiles/.bashrc >> ~/.bashrc
 cat dotfiles/.bash_aliases >> ~/.bash_aliases
 
-cargo install eza --locked
-cargo install zoxide --locked
+# install cargo-binstall
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
+cargo binstall eza --locked
+cargo binstall zoxide --locked
