@@ -92,7 +92,7 @@ alias countfiles="for t in files links directories; do echo \`find . -type \${t:
  # Replace batcat with cat on Fedora as batcat is not available as a RPM in any form
 if command -v lsb_release >/dev/null; then
 	DISTRIBUTION=$(lsb_release -si)
-	if [ "$DISTRIBUTION" = "Fedora" ] || [ "$DISTRIBUTION" = "Arch" ]; then
+	if [ "$DISTRIBUTION" = "Fedora" ] || [ "$DISTRIBUTION" = "Arch" ] || [ "$DISTRIBUTION" = "Debian" ] ; then
 		alias cat='bat'
 		alias readme="bat README.*"
 	else

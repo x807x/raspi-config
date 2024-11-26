@@ -441,39 +441,9 @@ bind '"\C-f":"zi\n"'
 
 export PATH=$PATH:"$HOME/.local/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin:/.local/share/flatpak/exports/bin"
 
-# Install Starship - curl -sS https://starship.rs/install.sh | sh
-eval "$(starship init bash)"
 eval "$(zoxide init bash)"
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ckeisc807/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/ckeisc807/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/ckeisc807/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/ckeisc807/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 . "$HOME/.cargo/env"
-
-
-#######################################################
-# jupyter notebook
-#######################################################
-
-if tmux ls | grep -q "^jupyter-server:"; then
-    echo "The 'jupyter-server' session is running."
-else
-	tmuxr jupyter-server jupyter-lab
-fi
-
 
 #######################################################
 # Start Up
